@@ -1,13 +1,13 @@
-# Image Fourier Transform Mixer
+# Image FT Mixer Pro
 
-> **Image FT-Mixer** analyzes, visualizes, and manipulates images in the Fourier domain, allowing users to mix up to four images’ Fourier Transform components.
-![Project Overview](https://github.com/user-attachments/assets/431774f2-e1e2-4d62-b236-d05fdd59bbe0)
+> **Image FT Mixer Pro** analyzes, visualizes, and manipulates images in the Fourier domain, allowing users to mix up to four images’ Fourier Transform components.
+> ![Project Overview](https://github.com/user-attachments/assets/28b00396-92dd-47d0-ac90-7ec7d0f3a252)
 
 ---
 
 ## Video Demo
 
-https://github.com/user-attachments/assets/a3f56a98-2a61-4528-80b4-d45b0698c641
+https://github.com/user-attachments/assets/cad8e300-f260-4d07-84e3-59fb6c6d8f17
 
 ---
 
@@ -24,9 +24,9 @@ https://github.com/user-attachments/assets/a3f56a98-2a61-4528-80b4-d45b0698c641
 * **Dynamic Component Mode**: Switch globally between `Magnitude/Phase` or `Real/Imaginary` modes.
 * **Optimized Visualization**:
 
-    * Magnitude: Log-scaled, normalized, color-mapped (e.g., INFERNO).
-    * Phase: Scaled and color-mapped (e.g., MAGMA).
-    * Real/Imaginary: Log-scaled absolute values with gamma correction (PLASMA/CIVIDIS).
+  * Magnitude: Log-scaled, normalized, color-mapped (e.g., INFERNO).
+  * Phase: Scaled and color-mapped (e.g., MAGMA).
+  * Real/Imaginary: Log-scaled absolute values with gamma correction (PLASMA/CIVIDIS).
 
 ### Brightness & Contrast Adjustment
 
@@ -38,9 +38,9 @@ https://github.com/user-attachments/assets/a3f56a98-2a61-4528-80b4-d45b0698c641
 * **Component Mixer**: Set contribution of each image's FT component with weight sliders (0-100%).
 * **Region Mixer**: Apply a 2D Gaussian filter for smooth, high-fidelity frequency-domain mixing.
 
-    * **Inner (Low-Freq)**: Preserves low-frequency content (smoothness of the Gaussian filter).
-    * **Outer (High-Freq)**: Preserves high-frequency content (inverse of the Gaussian filter).
-    * **Adjustable Sigma**: Modify the smoothness and cutoff frequency using the Gaussian Standard Deviation ($\sigma$) slider.
+  * **Inner (Low-Freq)**: Preserves low-frequency content (smoothness of the Gaussian filter).
+  * **Outer (High-Freq)**: Preserves high-frequency content (inverse of the Gaussian filter).
+  * **Adjustable Sigma**: Modify the smoothness and cutoff frequency using the Gaussian Standard Deviation ($\sigma$) slider.
 
 ### Output & Asynchronous Operation
 
@@ -59,15 +59,15 @@ https://github.com/user-attachments/assets/a3f56a98-2a61-4528-80b4-d45b0698c641
 * **Application Logic (`main.py`)**: Manages state, file I/O, events, and thread orchestration.
 * **Core Logic (`app/core`)**:
 
-    * `ImageProcessor`: Normalization, resizing, brightness/contrast.
-    * `FFTAnalyzer`: FT computation and visualization.
-    * `Mixer`: Mixing algorithms and region masking.
+  * `ImageProcessor`: Normalization, resizing, brightness/contrast.
+  * `FFTAnalyzer`: FT computation and visualization.
+  * `Mixer`: Mixing algorithms and region masking.
 * **Asynchronous Processing (`app/workers`)**: Uses PyQt signals for cross-thread communication.
 
 ### Technologies Used
 
 | Component            | Technology         | Purpose                                                          |
-|----------------------|--------------------|------------------------------------------------------------------|
+| -------------------- | ------------------ | ---------------------------------------------------------------- |
 | GUI Framework        | PyQt5              | Cross-platform interface                                         |
 | Image Processing     | OpenCV (`cv2`)     | Grayscale conversion, resizing, B/C adjustment, FT visualization |
 | Scientific Computing | NumPy              | FFT/IFFT and high-performance array operations                   |
@@ -77,26 +77,31 @@ https://github.com/user-attachments/assets/a3f56a98-2a61-4528-80b4-d45b0698c641
 
 ### **Application Interface**
 
-Below are illustrative screenshots of the application showcasing its key features (replace the placeholders with actual images):
+Below are illustrative screenshots of the application showcasing its key features:
 
 1. **Main Interface with Four Image Viewports**
 
-   ![UI Interface](https://github.com/user-attachments/assets/63501866-b537-4a49-9997-77fe253a7de6)
+   ![UI Interface](https://github.com/user-attachments/assets/b4f81aeb-54a1-4780-9c40-849ada4cde75)
+
 
 2. **Fourier Transform Component Selection**
 
-   ![FT Componenet Selection](https://github.com/user-attachments/assets/16980abe-bdcb-4e87-8d42-0061cd346183)
+   ![FT Component Selection](https://github.com/user-attachments/assets/a18335fb-0016-44fe-a850-437da611f069)
+
 
 3. **Brightness/Contrast Adjustment**
 
-   ![Brightness & Contrast](https://github.com/user-attachments/assets/b7d3ea2a-4185-4c65-977d-9a76b23bd9a3)
+   ![Brightness & Contrast](https://github.com/user-attachments/assets/1cb4f1b4-9b91-42f6-9a74-9d31fe7d79e8)
+
 
 4. **Region Selection for FT Components**
-   a-Inner Region
-   ![Inner Region](https://github.com/user-attachments/assets/8c17a8a3-d8d8-435d-87ad-c41ed7559ba5)
 
-   b-Outer Region
-   ![Outer Region](https://github.com/user-attachments/assets/9f1d72fd-7241-449d-807b-0391c13a0e9a)
+   * **Inner Region**
+     ![Inner Region](https://github.com/user-attachments/assets/0f064076-52aa-433c-95d2-d52918e9508e)
+
+   * **Outer Region**
+     ![Outer Region](https://github.com/user-attachments/assets/4b5bf23e-21a1-458e-ab92-e245726e3aec)
+
 
 ---
 
@@ -105,33 +110,25 @@ Below are illustrative screenshots of the application showcasing its key feature
 1. **Clone Repository**:
 
 ```
-
-git clone [https://github.com/madonna-mosaad/FT-Magnitude-Phase-Mixer.git](https://github.com/madonna-mosaad/FT-Magnitude-Phase-Mixer.git)
-
+git clone https://github.com/madonna-mosaad/FT-Magnitude-Phase-Mixer.git
 ```
 
 2. **Navigate to Directory**:
 
 ```
-
 cd FT-Magnitude-Phase-Mixer
-
 ```
 
 3. **Install Dependencies**:
 
 ```
-
 pip install -r requirements.txt
-
 ```
 
 4. **Run Application**:
 
 ```
-
 python Main.py
-
 ```
 
 ---
